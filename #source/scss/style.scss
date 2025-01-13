@@ -60,9 +60,32 @@
     // ~~~ Hero ~~~
     @import "../components/hero/hero";
 
-    // ~~~ CTA-BANNER ~~~
 
+    // ~~~ Video Section
+    @import "../components/video-section/video-section";
+
+
+    // ~~~ CTA-BANNER ~~~
     @import "../components/cta-banner/cta-banner";
+
+
+    // ~~~ Text-Section ~~~
+    @import "../components/text-section/text-section";
+
+
+    // ~~~ slider-section ~~~
+    @import "../components/slider-section/slider-section";
+
+
+    // ~~~ pricing ~~~
+    @import "../components/pricing/pricing";
+
+    
+    // ~~~ quote ~~~
+    @import "../components/quote/quote";
+
+
+
 
     // ~~~~~~~ Styles for index.html END ~~~~~~~
 

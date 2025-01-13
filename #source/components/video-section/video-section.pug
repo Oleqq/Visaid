@@ -1,0 +1,16 @@
+section.video-section
+
+
+
+    .container.video-section__container 
+        .video-section__wrapper 
+            .video-section-text 
+                .video-section-text__title See how it works
+                .video-section-text__subtitle Build social narratives and communication aids
+ 
+            .video-section__video
+                iframe#video-frame(src='https://www.youtube.com/embed/VIDEO_ID' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen)
+
+            .video-controls
+                button(onclick='changeVideo("youtube", "VIDEO_ID")') YouTube
+                button(onclick='changeVideo("vimeo", "VIDEO_ID")') Vimeo

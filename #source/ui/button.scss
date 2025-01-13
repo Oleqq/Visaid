@@ -1,0 +1,83 @@
+.button {
+
+    &-primary {
+
+        border-radius: 5px;
+        background: linear-gradient(319deg, #92c6f6 0%, #1429d4 100%);
+
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        color: var(--white);
+
+        padding: 14px 24px;
+
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+
+        &-outlined {
+            position: relative;
+            background-color: transparent; /* Прозрачный фон */
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 0.01em;
+            color: var(--dark-grey);
+            border: none;
+            border-radius: 5px;
+            padding: 14px 24px;
+            cursor: pointer;
+            text-decoration: none;
+            
+            /* Важное: добавляем псевдоэлемент */
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0; /* Заполняет всю кнопку */
+                border-radius: 5px; /* Радиус углов для градиента */
+                padding: 1px; /* Толщина обводки */
+                background: linear-gradient(319deg, #92c6f6 0%, #1429d4 100%);
+                -webkit-mask: 
+                    linear-gradient(#fff 0 0) content-box, 
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                z-index: -1; /* Отправляем под кнопку */
+            }
+        
+        
+
+        // &-outlined {
+        //     background: transparent;
+            
+        //     border-radius: 8px; 
+        //     color: #1429d4;
+        //     padding: 10px 20px;
+        //     font-size: 16px;
+        //     position: relative;
+        //     cursor: pointer;
+
+        //     font-family: var(--font-family);
+        //     font-weight: 400;
+        //     font-size: 16px;
+        //     letter-spacing: 0.01em;
+        //     color: var(--dark-grey);
+            
+              
+        //         &::before {
+        //             content: '';
+        //             position: absolute;
+        //             inset: -4px; /* Толщина обводки */
+        //             z-index: -1;
+        //             background: linear-gradient(319deg, #92c6f6 0%, #1429d4 100%);
+        //             border-radius: 8px; /* Радиус углов */
+        // }
+              
+        }
+    }
+}

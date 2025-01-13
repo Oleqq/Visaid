@@ -1,0 +1,224 @@
+.slider-section {
+    overflow: hidden;
+    padding-bottom: 126px;
+
+    &__container {
+
+    }
+    &__wrapper {
+
+    }
+    &__slider {
+
+        
+    }
+
+    // card 
+    &-card {
+        width: 450px;
+        height: 450px;
+
+        background-color: #fff;
+        border-radius: 22px;
+
+        border: 2px solid #8A94E9;
+
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        z-index: 10;
+        position: relative;
+
+        padding: 24px;
+
+
+        &__fav {
+            position: absolute;
+            right: 12px;
+            top: 32px;
+        }
+
+        &__img {
+            display: flex;
+            img {
+                display: flex;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &__title {
+            font-family: var(--third-family);
+            font-weight: 400;
+            font-size: 17px;
+            letter-spacing: -0.02em;
+            color: #1629d4;   
+        }
+    }
+
+}
+
+
+.slider-section__slider-controls {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    .slider-section-button-prev {
+
+        cursor: pointer;
+        transition: .2s ease;
+
+        svg {
+            transition: .2s ease;
+            circle {
+                transition: .2s ease;
+            }
+            path {
+                transition: .2s ease;
+            }
+        }
+
+        &:hover {
+            transition: .2s ease;
+            circle {
+                transition: .2s ease;
+                fill: #1429D4;
+                opacity: 1;
+            }
+            path {
+                transition: .2s ease;
+                fill: #fff;
+            }
+        }
+    }
+    .slider-section-button-next {
+        transition: .2s ease;
+        cursor: pointer;
+        svg {
+            transition: .2s ease;
+            circle {
+                transition: .2s ease;
+            }
+            path {
+                transition: .2s ease;
+            }
+        }
+
+        &:hover {
+            transition: .2s ease;
+            circle {
+                transition: .2s ease;
+                fill: #1429D4;
+                opacity: 1;
+            }
+            path {
+                transition: .2s ease;
+                fill: #fff;
+            }
+        }
+    }
+}
+
+.slider-section__slider {
+
+    
+    .swiper-wrapper {
+        display: flex;
+        padding-bottom: 38px;
+        position: relative;
+        transition: .2s ease;
+        @include adaptiveValue (right, 12px, 182px, 1920px, 567px);
+    }
+
+    .swiper-slide {
+       
+        opacity: 1;
+        transform: scale(0.9);
+        position: relative;
+        transition: .42s ease;
+
+        &-active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 10;
+            transition: .4s ease;
+            left: 0;
+            right: 0;
+        }
+
+        &-next {
+            opacity: 1;
+            transform: scale(0.85);
+            z-index: 9;
+            transition: .2s ease;
+            left: -32px;
+
+            @media (max-width:1440px) {
+                left: -16px;
+            }
+
+            &-next {
+                opacity: 1;
+                transform: scale(0.65);
+                z-index: 8;
+                transition: .4s ease;
+                left: -132px;
+                @media (max-width:1440px) {
+                    left: -32px;
+                }
+
+                &-next {
+                    opacity: 1;
+                    transform: scale(0.55);
+                    z-index: 7;
+                    transition: .6s ease;
+                    left: 0;
+                }
+            }
+        }
+        &-prev {
+            opacity: 1;
+            transform: scale(0.85);
+            z-index: 9;
+            transition: .2s ease;
+            right: -32px;
+
+            @media (max-width:1440px) {
+                right: -16px;
+            }
+            
+            &-prev {
+                opacity: 1;
+                transform: scale(0.65);
+                z-index: 8;
+                transition: .4s ease;
+                right: -132px;
+
+                @media (max-width:1440px) {
+                    right: -32px;
+                }
+               
+                &-prev {
+                    opacity: 1;
+                    transform: scale(0.55);
+                    z-index: 7;
+                    transition: .6s ease;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+}
+.slider-section__slider {
+    width: 100%; 
+   
+    position: relative;
+
+    .swiper-wrapper {
+        display: flex;
+
+    }
+
+
+}

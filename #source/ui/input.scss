@@ -1,0 +1,25 @@
+.cta-input {
+    input {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        color: #1429D4;     
+
+        padding: 16px;
+
+        border: 0.20px solid var(--black);
+        border-radius: 5px;
+
+        &::placeholder {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 0.01em;
+            color: var(--dark-grey);
+            
+            opacity: .5;
+            
+        }
+    } 
+}

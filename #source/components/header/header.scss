@@ -1,5 +1,35 @@
 .header {
-    background-color: #000;
-    height: 50px;
-    width: 50px;
+
+    &__container {
+        max-width: 1440px;
+        padding-top: 62px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        display: flex;
+
+    }
+    &__buttons {
+
+        @media (max-width:390px) {
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 14px;
+
+            li {
+                display: flex;
+                a {
+
+                }
+            }
+        }
+    }
 }

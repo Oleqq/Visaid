@@ -1,0 +1,124 @@
+.hero {
+
+    padding-top: 100px;
+    padding-bottom: 66px;
+
+    position: relative;
+
+    &__bg {
+        z-index: -5;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -20%;
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(180deg, #1629d4 0%, rgba(20, 41, 212, 0) 100%);
+        opacity: 0.15;
+    }
+
+    &__container {
+        max-width: 1280px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }   
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        margin-bottom: 88px;
+
+        img {
+            display: flex;
+            width: 100%;
+        }
+            
+        &-img {
+
+            &-1 {
+                position:absolute;
+
+                left: 50px;
+                right: 0px;
+                top: -20px;
+
+                margin: 0 auto;
+
+                border-radius: 10px;
+                width: 269px;
+                height: 100px;
+
+                display: flex;
+                
+                img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+            }
+            &-2 {
+                position:absolute;
+
+                right: 174px;
+                top: 21.5%;
+
+                border-radius: 10px;
+                width: 150px;
+                height: 100px;
+
+                display: flex;
+                
+                img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+            }
+            &-3 {
+                position:absolute;
+
+                left: 46px;
+                bottom: 85px;
+
+                border-radius: 10px;
+                width: 150px;
+                height: 99px;
+
+                display: flex;
+                
+                img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+            }
+            &-4 {
+                position:absolute;
+
+                bottom: -9px;
+                margin: 0 auto;
+                right: 0;
+                left: 52px;
+
+                border-radius: 10px;
+                width: 207px;
+                height: 100px;
+                display: flex;
+                
+                img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+}

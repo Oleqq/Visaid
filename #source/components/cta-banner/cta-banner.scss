@@ -1,0 +1,37 @@
+.cta-banner {
+
+    padding-bottom: 120px;
+
+    &__container {
+        max-width: 1000px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        background: var(--soft-sand);
+        border-radius: 10px;
+
+        padding: 38px 50px 52px;
+    }
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+        color: var(--dark-grey);
+
+        margin-bottom: 26px;
+    }
+    &__input {
+        display: flex;
+        gap: 8px;
+        flex: 1;
+        width: 100%;
+        input {
+
+        }
+    }
+    .button-primary {
+        border: none;
+    }
+}
