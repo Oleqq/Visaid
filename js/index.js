@@ -1,26 +1,52 @@
 $(document).ready(function () {
-    // Инициализация слайдера
+
     const swiper = new Swiper('.slider-section__slider', {
-        slidesPerView: 4, // Количество видимых слайдов
-        centeredSlides: true, // Центровка активного слайда
-        loop: true, // Зацикливание слайдов
+        slidesPerView: 4, 
+        centeredSlides: true, 
+        loop: true,
         speed: 600,
         navigation: {
             nextEl: '.slider-section-button-next',
             prevEl: '.slider-section-button-prev',
         },
-       
+        
+        breakpoints: {
+          2560: {
+            slidesPerView: 4,
+          },
+          1920: {
+            slidesPerView: 4,
+          },
+          1440: {
+            slidesPerView: 4,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
+          1099: {
+            slidesPerView: 4,
+          },
+          767: {
+            slidesPerView: 3,
+          },
+          567: {
+            slidesPerView: 2,
+          },
+          0: {
+            slidesPerView: 2,
+          },
+        }
 
     });
 
-    // Обновление классов при изменении слайда
+
     function updateClasses() {
-        // Убираем старые классы
+       
         $('.swiper-slide').removeClass(function (index, className) {
             return (className.match(/swiper-slide-(next|prev)(-next|-prev){0,2}/g) || []).join(' ');
         });
 
-        // Добавляем новые классы
+        
         for (let i = 1; i <= 3; i++) {
             const nextIndex = (swiper.activeIndex + i) % swiper.slides.length;
             const prevIndex = (swiper.activeIndex - i + swiper.slides.length) % swiper.slides.length;
@@ -30,12 +56,38 @@ $(document).ready(function () {
         }
     }
 
-    // Привязываем обработчик событий
+   
     swiper.on('slideChange', updateClasses);
 
-    // Триггерим начальное обновление
+  
     updateClasses();
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  if (window.innerWidth < 990) {
+    const pricingSwiper = new Swiper('.pricing__cards', {
+      slidesPerView: 'auto', 
+      centeredSlides: true,
+      spaceBetween: 10,
+      
+      
+      navigation: {
+        nextEl: '.pricing__cards-button-next', 
+        prevEl: '.pricing__cards-button-prev'
+      },
+      pagination: {
+        type: 'bullets',
+        el: '.pricing__cards-pagination',
+        clickable: true,
+      },
+    });
+  }
+});
+
 
 
 
@@ -53,40 +105,103 @@ function changeVideo(platform, videoID) {
 
   document.addEventListener("DOMContentLoaded", () => {
     const toggleButtons = document.querySelectorAll(".pricing__toggle-btn");
+  
+   
     const prices = {
       monthly: ["AU$0", "AU$15", "AU$25"],
       annually: ["AU$0", "AU$135", "AU$225"],
     };
   
-    // Добавление логики переключения периодов
+   
     toggleButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        // Сбрасываем активное состояние у кнопок
+        
         toggleButtons.forEach((b) => b.classList.remove("pricing__toggle-btn--active"));
         btn.classList.add("pricing__toggle-btn--active");
   
-        // Получаем выбранный период
+        
         const period = btn.getAttribute("data-period");
   
-        // Обновляем цены для карточек
+       
         const cards = document.querySelectorAll(".pricing__card");
         cards.forEach((card, index) => {
-          card.querySelector(".pricing__price").textContent = prices[period][index];
+          const priceElement = card.querySelector(".pricing__price");
+          const periodElement = priceElement.querySelector(".pricing__period");
+  
+         
+          priceElement.firstChild.textContent = prices[period][index];
+  
+         
+          if (periodElement) {
+            periodElement.textContent = period === "monthly" ? "per month" : "per year";
+          }
         });
       });
     });
   
-    // Логика выбора только одной активной карточки
+    
     const cards = document.querySelectorAll(".pricing__card");
   
     cards.forEach((card) => {
       card.addEventListener("click", () => {
-        // Удаляем класс active у всех карточек
+        
         cards.forEach((c) => c.classList.remove("active"));
   
-        // Добавляем класс active только выбранной карточке
+        
         card.classList.add("active");
       });
     });
   });
   
+  
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const title = document.querySelector('.quote__title h3');
+    const subtitleText = document.querySelector('.quote__subtitle p');
+    const authorTitle = document.querySelector('.quote-author__info h4');
+    const authorSubtitle = document.querySelector('.quote-author__info p');
+    const avatarImages = document.querySelectorAll('.quote-author__img img'); 
+  
+   
+    function updateContent(activeAvatar) {
+      title.textContent = activeAvatar.dataset.title;
+      subtitleText.textContent = activeAvatar.dataset.subtitle;
+      authorTitle.textContent = activeAvatar.dataset.author;
+      authorSubtitle.textContent = activeAvatar.dataset.position;
+  
+     
+      animateText(title);
+      animateText(subtitleText);
+      animateText(authorTitle);
+      animateText(authorSubtitle);
+    }
+  
+
+    function animateText(element) {
+      element.classList.remove('fade-in');
+      void element.offsetWidth; 
+      element.classList.add('fade-in');
+    }
+  
+  
+    if (avatarImages.length > 1) {
+      avatarImages[1].classList.add('quote-author__image--active'); 
+      updateContent(avatarImages[1]); 
+    }
+  
+  
+    avatarImages.forEach(img => {
+      img.addEventListener('click', () => {
+        
+        avatarImages.forEach(image => image.classList.remove('quote-author__image--active'));
+        
+      
+        img.classList.add('quote-author__image--active');
+   
+        updateContent(img);
+      });
+    });
+  });

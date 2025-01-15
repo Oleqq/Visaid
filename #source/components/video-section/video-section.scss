@@ -1,8 +1,10 @@
 .video-section {
 
-    padding-bottom: 75px;
-
+  
+    
     position: relative;
+
+    @include adaptiveValue(padding-bottom, 75px, 32px, 1440px, 390px);
 
     &__container {
         max-width: 1000px;
@@ -20,6 +22,8 @@
             color: var(--visaid-blue);
 
             margin-bottom: 16px;
+
+            @include adaptiveValue(font-size, 30px, 22px, 1440px, 390px);
         }
         &__subtitle {
             font-family: var(--second-family);
@@ -30,6 +34,17 @@
             color: var(--dark-grey);
 
             margin-bottom: 36px;
+
+            @include adaptiveValue(font-size, 20px, 16px, 1440px, 390px);
+
+            @include adaptiveValue(margin-bottom, 36px, 21px, 1440px, 390px);
+
+            @media (max-width:467px) {
+              max-width: 320px;
+              margin-left: auto;
+              margin-right: auto;
+              line-height: normal;
+            }
         }
     }
 

@@ -1,0 +1,117 @@
+.footer {
+    position: relative;
+
+    padding-bottom: 160px;
+
+    @include adaptiveValue(padding-bottom, 160px, 140px, 1440px, 390px);
+
+    
+
+    &__bg {
+        // position: absolute;
+        // bottom: -200px;
+        // right: 0;
+
+        // width: 100%;
+        // height: 1225px;
+
+        // z-index: -1;
+
+        // svg {
+        //     width: 100%;
+        //     height: 100%;
+        //     display: flex;
+
+        //     position: relative;
+
+        //     rect {
+        //         position: absolute;
+        //         width: 100%;
+        //         right: 0;
+        //     }
+        // }
+
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 1225px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            z-index: -10;
+            background: linear-gradient(180deg, #1629d4 0%, rgba(20, 41, 212, 0) 100%);
+            transform: rotate(-180deg);
+            height: 1225px;
+
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+
+        }
+    }
+
+    &__container {
+       
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        position: relative;
+        z-index: 10;
+
+        max-width: 800px;
+        margin: 0 auto;
+
+        gap: 70px;
+
+
+       @media (max-width:767px) {
+        flex-direction: column;
+        gap: 32px;
+       }
+    }
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 120%;
+        text-align: right;
+        color: var(--white);
+
+        @include adaptiveValue(font-size, 45px, 45px, 1440px, 390px);
+
+        @media (max-width:767px) {
+            text-align: center;
+        }
+
+        
+    }
+    &__divider {
+        height: 200px;
+        width: 1px;
+        background-color: var(--soft-blue);
+
+        @media (max-width:767px) {
+            height: 70px;
+        }
+    }
+    &__subtitle {
+        font-family: var(--second-family);
+        font-weight: 350;
+        font-size: 20px;
+        letter-spacing: 0.01em;
+        color: var(--white);
+        line-height: normal;
+
+        max-width: 400px;
+
+        @media (max-width:767px) {
+            text-align: center;
+        }
+    }
+}

@@ -7,3 +7,99 @@
     }
 }
   
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-bottom {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 48px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+    svg {
+        transition: .2s ease;
+        
+        .hover-circle {
+            transition: .2s ease;
+            
+        }
+    }
+
+    &:hover {
+        transition: .2s ease;
+
+        svg {
+            transition: .2s ease;
+            
+            .hover-circle {
+                transition: .2s ease;
+                fill:  var(--visaid-blue);
+            }
+        }
+    }
+}
+.scroll-top {
+    position: absolute;
+    z-index: 30;
+    @include adaptiveValue(right, 100px, 24px, 1440px, 395px);
+    bottom: 32px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+    svg {
+        transition: .2s ease;
+        
+        ellipse {
+            transition: .2s ease;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        transition: .2s ease;
+        svg {
+            transition: .2s ease;
+
+            ellipse {
+                
+                transition: .2s ease;
+            }
+        }
+    }
+}
+
+body {
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #1429d4;
+    --sb-size: 8px;
+  }
+  
+  body::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 0px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 0px;
+    
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+}

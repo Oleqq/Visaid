@@ -1,44 +1,67 @@
 section.pricing
     
     .container.pricing__container
-        .pricing__bg 
+
 
         .pricing__wrapper
+            .pricing__bg 
+                <svg xmlns="http://www.w3.org/2000/svg" width="1392" height="739" viewBox="0 0 1392 739" fill="none">
+                    <rect x="1392" y="5.91278e-05" width="738.992" height="1392" rx="15" transform="rotate(90 1392 5.91278e-05)" fill="url(#paint0_radial_5964_11424)" fill-opacity="0.1"/>
+                    <defs>
+                    <radialGradient id="paint0_radial_5964_11424" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1392 696) scale(533.562 553.33)">
+                    <stop stop-color="#1429D4"/>
+                    <stop offset="0.61" stop-color="#1429D4" stop-opacity="0.604101"/>
+                    <stop offset="1" stop-color="#1429D4" stop-opacity="0"/>
+                    </radialGradient>
+                    </defs>
+                </svg>
+
             h2.pricing__title Pricing
             p.pricing__subtitle Try it for free, access more features as you need. Cancel anytime.
             .pricing__toggle
                 button.pricing__toggle-btn.pricing__toggle-btn--active(data-period="monthly") Monthly
                 button.pricing__toggle-btn(data-period="annually") Annually (save 10%)
-            .pricing__cards
-                .pricing__card.pricing__card--free
-                    span.pricing__badge Free
-                    h3.pricing__price AU$0
-                        span.pricing__period per month
-                    .pricing__includes Includes:
-                    ul.pricing__features
-                        li.pricing__feature Create up to 2 stories
-                        li.pricing__feature Limited access to image library
-                        li.pricing__feature Limited access to template library
-                    button.pricing__select Select plan
-                .pricing__card.pricing__card--essentials
-                    span.pricing__badge Essentials
-                    h3.pricing__price AU$15
-                        span.pricing__period per month
-                    .pricing__includes Includes:
-                    ul.pricing__features
-                        li.pricing__feature Create unlimited stories
-                        li.pricing__feature Unlimited access to image library
-                        li.pricing__feature Unlimited access to template library
-                    button.pricing__select Select plan
-                .pricing__card.pricing__card--super
-                    span.pricing__badge Super
-                    h3.pricing__price AU$25
-                        span.pricing__period per month
-                    .pricing__includes Includes:
-                    ul.pricing__features
-                        li.pricing__feature Create unlimited stories
-                        li.pricing__feature Unlimited access to image library
-                        li.pricing__feature Unlimited access to template library
-                        li.pricing__feature Export to online slideshow
-                        li.pricing__feature Upload own images
-                    button.pricing__select Select plan
+            .pricing__cards 
+                .swiper-wrapper
+                    .swiper-slide.pricing__card.pricing__card--free
+                        span.pricing__badge Free
+                        h5.pricing__title-secondary To get you started. 
+                        h3.pricing__price AU$0
+                            span.pricing__period per month
+                        .pricing__divider-primary
+                        .pricing__includes Includes:
+                        ul.pricing__features
+                            li.pricing__feature Create up to 2 stories
+                            li.pricing__feature Limited access to image library
+                            li.pricing__feature Limited access to template library
+                        .pricing__divider-secondary
+                        button.pricing__select Select plan
+                    .swiper-slide.pricing__card.pricing__card--essentials
+                        span.pricing__badge Essentials
+                        h5.pricing__title-secondary For most professionals
+                        h3.pricing__price AU$15
+                            span.pricing__period per month
+                        .pricing__divider-primary
+                        .pricing__includes Includes:
+                        ul.pricing__features
+                            li.pricing__feature Create unlimited stories
+                            li.pricing__feature Unlimited access to image library
+                            li.pricing__feature Unlimited access to template library
+                        .pricing__divider-secondary
+                        button.pricing__select Select plan
+                    .swiper-slide.pricing__card.pricing__card--super
+                        span.pricing__badge Super
+                        h5.pricing__title-secondary To get you started. 
+                        h3.pricing__price AU$25
+                            span.pricing__period per month
+                        .pricing__divider-primary
+                        .pricing__includes Includes:
+                        ul.pricing__features
+                            li.pricing__feature Create unlimited stories
+                            li.pricing__feature Unlimited access to image library
+                            li.pricing__feature Unlimited access to template library
+                            li.pricing__feature Export to online slideshow
+                            li.pricing__feature Upload own images
+                        .pricing__divider-secondary
+                        button.pricing__select Select plan               
+            .pricing__cards-pagination

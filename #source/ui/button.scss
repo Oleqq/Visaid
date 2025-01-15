@@ -20,9 +20,66 @@
         gap: 8px;
         width: fit-content;
 
+        transition: .2s ease;
+
+        position: relative;
+
+        transform: translateY(0);
+
+        cursor: pointer;
+
+        svg {
+            transition: .2s ease;
+
+            path {
+                transition: .2s ease;
+            }
+        }
+
+
+        &:hover {
+            transition: .2s ease;
+            background: transparent; 
+            color: #1429d4;
+
+            transform: translateY(1px);
+
+            &::before {
+                opacity: 1;
+
+               
+            }
+
+            svg {
+                transition: .2s ease;
+               path {
+                transition: .2s ease;
+                fill: #1429d4;
+               }
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0; 
+            border-radius: 5px; 
+            padding: 1px;
+            background: linear-gradient(319deg, #92c6f6 0%, #1429d4 100%);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1; 
+            opacity: 0;
+
+            transition: .4s ease;
+        }
+
         &-outlined {
             position: relative;
-            background-color: transparent; /* Прозрачный фон */
+            background-color: transparent; 
             font-family: var(--font-family);
             font-weight: 400;
             font-size: 16px;
@@ -33,21 +90,34 @@
             padding: 14px 24px;
             cursor: pointer;
             text-decoration: none;
+
+            transition: .2s ease;
+
+            transform: translateY(0);
             
-            /* Важное: добавляем псевдоэлемент */
+            cursor: pointer;
+
+            &:hover {
+                transition: .4s ease;
+                transform: translateY(1px);
+                color: var(--white);
+                background: linear-gradient(319deg, #92c6f6 0%, #1429d4 100%);
+            }
+            
+           
             &::before {
                 content: '';
                 position: absolute;
-                inset: 0; /* Заполняет всю кнопку */
-                border-radius: 5px; /* Радиус углов для градиента */
-                padding: 1px; /* Толщина обводки */
+                inset: 0; 
+                border-radius: 5px; 
+                padding: 1px;
                 background: linear-gradient(319deg, #92c6f6 0%, #1429d4 100%);
                 -webkit-mask: 
                     linear-gradient(#fff 0 0) content-box, 
                     linear-gradient(#fff 0 0);
                 -webkit-mask-composite: xor;
                 mask-composite: exclude;
-                z-index: -1; /* Отправляем под кнопку */
+                z-index: -1; 
             }
         
         

@@ -3,6 +3,8 @@
     &__container {
         max-width: 1440px;
         padding-top: 62px;
+
+        @include adaptiveValue(padding-top, 62px, 20px, 1440px, 390px);
     }
     &__wrapper {
         display: flex;
@@ -12,9 +14,18 @@
     &__logo {
         display: flex;
 
+        svg {
+            transition: .2s ease;
+            @media (max-width:467px) {
+                width: 85px;
+                height: 40px;
+            }
+        }
+
     }
     &__buttons {
-
+        position: relative;
+        z-index: 20;
         @media (max-width:390px) {
             display: none;
         }
